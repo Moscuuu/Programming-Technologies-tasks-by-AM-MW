@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Task0
 {
     public class SumCalculator
