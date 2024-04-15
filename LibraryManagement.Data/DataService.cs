@@ -19,7 +19,7 @@ namespace LibraryManagement.Data
 
         #region Displaying
 
-        public void Display(IEnumerable<Users> user)
+        /*public void Display(IEnumerable<Users> user)
         {
             List<Users> newa = user.ToList<Users>();
 
@@ -27,6 +27,19 @@ namespace LibraryManagement.Data
             {
                 Console.WriteLine(newa[i].All);
             }
+        }*/
+
+        public string Display(IEnumerable<Users> user)
+        {
+            StringBuilder sb = new StringBuilder();
+            List<Users> userList = user.ToList();
+
+            for (int i = 0; i < userList.Count; i++)
+            {
+                sb.AppendLine(userList[i].All);
+            }
+
+            return sb.ToString();
         }
 
         public void Display(IEnumerable<Catalog> thing)
