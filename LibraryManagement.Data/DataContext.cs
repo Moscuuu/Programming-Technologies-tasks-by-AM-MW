@@ -12,6 +12,6 @@ namespace LibraryManagement.Data
         public List<Users> user = new List<Users>();
         public Dictionary<int, Catalog> catalogs = new Dictionary<int, Catalog>();
         public ObservableCollection<Event> events = new ObservableCollection<Event>();
-        public List<State> states = new List<State>();  
+        public List<StateDescription> states = new List<StateDescription>();  
     }
 }
