@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalog.cs" />
-    <Compile Include="ConstantDataFilling.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="DataFill.cs" />
     <Compile Include="DataRepository.cs" />

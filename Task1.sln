@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.Data", "LibraryManagement.Data\LibraryManagement.Data.csproj", "{B199751C-BFF0-4936-8520-F35C75F20312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1tests", "Task1tests\Task1tests.csproj", "{78DEFDE5-1AF3-4DB9-8272-D51075592584}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task1tests", "Task1tests\Task1tests.csproj", "{78DEFDE5-1AF3-4DB9-8272-D51075592584}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,15 +11,6 @@ namespace LibraryManagement.Data
     {
         static void Main(string[] args)
         {
-
-            DataContext context = new DataContext();
-            ConstantDataFilling constants = new ConstantDataFilling();
-            DataRepository data = new DataRepository(context, constants);
-            data.FillStatic();
-            DataService service = new DataService(data);
-
-
-            Console.ReadKey();
         }
     }
 }

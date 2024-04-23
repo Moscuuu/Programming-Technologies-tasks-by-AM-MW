@@ -13,10 +13,10 @@ namespace LibraryManagement.Data
         private string author;
         private string number;
 
-        public Catalog(string tytul, string autor, string number)
+        public Catalog(string title, string author, string number)
         {
-            this.title = tytul;
-            this.author = autor;
+            this.title = title;
+            this.author = author;
             this.number = number;
         }
 
