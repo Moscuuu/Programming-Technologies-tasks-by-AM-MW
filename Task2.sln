@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayerTests", "PT\DataLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "PT\Service\Service.csproj", "{DC320C2E-1C0B-4680-A114-C176FE5D9E28}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceTest", "PT\ServiceTest\ServiceTest.csproj", "{50D8E4C8-8AD9-4DB5-89DC-7866D3BBC7F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DC320C2E-1C0B-4680-A114-C176FE5D9E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC320C2E-1C0B-4680-A114-C176FE5D9E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC320C2E-1C0B-4680-A114-C176FE5D9E28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D8E4C8-8AD9-4DB5-89DC-7866D3BBC7F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D8E4C8-8AD9-4DB5-89DC-7866D3BBC7F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D8E4C8-8AD9-4DB5-89DC-7866D3BBC7F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D8E4C8-8AD9-4DB5-89DC-7866D3BBC7F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
