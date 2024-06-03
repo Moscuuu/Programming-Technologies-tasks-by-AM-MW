@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="Presentation.View.EventDetailView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Presentation.View"
+      mc:Ignorable="d" 
+      xmlns:viewmodel="clr-namespace:Presentation.ViewModel"
+      d:DesignHeight="340" d:DesignWidth="220">
+
+    <UserControl.DataContext>
+        <ObjectDataProvider ObjectType="viewmodel:EventDetailViewModel">
+            <ObjectDataProvider.ConstructorParameters>
+                <x:Null/>
+                <x:Null/>
+            </ObjectDataProvider.ConstructorParameters>
+        </ObjectDataProvider>
+    </UserControl.DataContext>
+    
+    
+    <Grid Background="White" Height="340" VerticalAlignment="Bottom">
+
+        <GroupBox Width="220"
+                  HorizontalAlignment="Center"
+                  Header="Event details:" Margin="0,0,0,76">
+            <StackPanel
+                        VerticalAlignment="Top"
+                        Background="White" Height="233">
+                <Label Content="Event id:" HorizontalAlignment="Center"/>
+                <TextBox Height="20" Width="120"
+                         Text="{Binding Id, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                         TextWrapping="Wrap"
+                         BorderBrush="Gray" IsReadOnly="True">
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <StackPanel>
+                                <AdornedElementPlaceholder x:Name="placeholder"/>
+                                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
+
+                <Label Content="State id:" HorizontalAlignment="Center"/>
+                <TextBox Height="20" Width="120"
+                         Text="{Binding StateId, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                         TextWrapping="Wrap"
+                         BorderBrush="Gray">
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <StackPanel>
+                                <AdornedElementPlaceholder x:Name="placeholder"/>
+                                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
+
+                <Label Content="User id:" HorizontalAlignment="Center"/>
+                <TextBox Height="20" Width="120"
+                         Text="{Binding UserId, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                         TextWrapping="Wrap"
+                         BorderBrush="Gray">
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <StackPanel>
+                                <AdornedElementPlaceholder x:Name="placeholder"/>
+                                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
+                <Label Content="Event date:" Width="70"/>
+                <TextBox Height="20" Width="120"
+                    Text="{Binding EventDate, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, StringFormat={}{0:MM/dd/yyyy}}"
+                    TextWrapping="Wrap"
+                    BorderBrush="Gray" IsReadOnly="True">
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <StackPanel>
+                                <AdornedElementPlaceholder x:Name="placeholder"/>
+                                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
+                <Label Content="Type:" Width="39"/>
+                <TextBox Height="20" Width="120"
+                    Text="{Binding Type, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                    TextWrapping="Wrap"
+                    BorderBrush="Gray">
+                    <Validation.ErrorTemplate>
+                        <ControlTemplate>
+                            <StackPanel>
+                                <AdornedElementPlaceholder x:Name="placeholder"/>
+                                <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                            </StackPanel>
+                        </ControlTemplate>
+                    </Validation.ErrorTemplate>
+                </TextBox>
+
+
+
+
+            </StackPanel>
+        </GroupBox>
+        <Button Content="Update" Background="Azure" HorizontalAlignment="Center" Margin="0,269,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.227,0.242" Height="26" Width="90"
+            Command="{Binding UpdateEvent}"/>
+    </Grid>
+</UserControl>
