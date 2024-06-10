@@ -112,8 +112,6 @@ internal class EventMasterViewModel : IViewModel, IEventMasterViewModel
         this.Events = new ObservableCollection<IEventDetailViewModel>();
 
         this._modelOperation = IEventModelOperation.CreateModelOperation();
-        this._informer = informer ?? new PopupErrorInformer();
-
         this.IsEventSelected = false;
 
         Task.Run(this.LoadEvents);
@@ -147,11 +145,11 @@ internal class EventMasterViewModel : IViewModel, IEventMasterViewModel
 
                 this.LoadEvents();
 
-                this._informer.InformSuccess("Event successfully created!");
+                Informer.InformSuccess("Event successfully created!");
             }
             catch (Exception e)
             {
-                this._informer.InformError(e.Message);
+                Informer.InformError(e.Message);
             }
         });
     }
@@ -166,7 +164,7 @@ internal class EventMasterViewModel : IViewModel, IEventMasterViewModel
 
             this.LoadEvents();
 
-            this._informer.InformSuccess("Event successfully created!");
+            Informer.InformSuccess("Event successfully created!");
         });
     }
 
@@ -178,7 +176,7 @@ internal class EventMasterViewModel : IViewModel, IEventMasterViewModel
 
             this.LoadEvents();
 
-            this._informer.InformSuccess("Event successfully deleted!");
+            Informer.InformSuccess("Event successfully deleted!");
         });
     }
 

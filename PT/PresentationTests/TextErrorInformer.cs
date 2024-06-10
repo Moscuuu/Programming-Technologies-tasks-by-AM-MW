@@ -1,4 +1,4 @@
-﻿using Presentation.Model.API;
+﻿using Presentation.ViewModel;
 
 namespace PresentationTests;
 
@@ -24,5 +24,10 @@ internal class TextErrorInformer : IErrorInformer
     public string GetRecentMessage()
     {
         return this._recentMessage;
+    }
+
+    public void CallMessageBox(string message)
+    {
+        this._recentMessage = message;
     }
 }

@@ -109,8 +109,6 @@ internal class UserMasterViewModel : IViewModel, IUserMasterViewModel
         this.Users = new ObservableCollection<IUserDetailViewModel>();
 
         this._modelOperation = model ?? IUserModelOperation.CreateModelOperation();
-        this._informer = informer ?? new PopupErrorInformer();
-
         this.IsUserSelected = false;
 
         Task.Run(this.LoadUsers);
@@ -132,7 +130,7 @@ internal class UserMasterViewModel : IViewModel, IUserMasterViewModel
 
             await this._modelOperation.AddUser(lastId, this.FirstName, this.LastName);
 
-            this._informer.InformSuccess("User successfully created!");
+           Informer.InformSuccess("User successfully created!");
 
             this.LoadUsers();
         });
@@ -146,13 +144,13 @@ internal class UserMasterViewModel : IViewModel, IUserMasterViewModel
             {
                 await this._modelOperation.DeleteUser(this.SelectedDetailViewModel.Id);
 
-                this._informer.InformSuccess("User successfully deleted!");
+                Informer.InformSuccess("User successfully deleted!");
 
                 this.LoadUsers();
             }
             catch (Exception e)
             {
-                this._informer.InformError("Error while deleting user! Remember to remove all associated events!");
+                Informer.InformError("Error while deleting user! Remember to remove all associated events!");
             }
         });
     }

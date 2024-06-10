@@ -1,7 +1,7 @@
-﻿using Presentation.Model.API;
-using System.Windows;
+﻿using System.Windows;
+using Presentation.ViewModel;
 
-namespace Presentation;
+namespace Presentation.View;
 
 internal class PopupErrorInformer : IErrorInformer
 {
@@ -9,25 +9,30 @@ internal class PopupErrorInformer : IErrorInformer
 
     public PopupErrorInformer()
     {
-        this._recentMessage = string.Empty;
+        _recentMessage = string.Empty;
     }
 
     public void InformError(string message)
     {
-        this._recentMessage = message;
+        _recentMessage = message;
 
         MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
     }
 
     public void InformSuccess(string message)
     {
-        this._recentMessage = message;
+        _recentMessage = message;
 
         MessageBox.Show(message, "Success", MessageBoxButton.OK, MessageBoxImage.Information);
     }
 
     public string GetRecentMessage()
     {
-        return this._recentMessage;
+        return _recentMessage;
+    }
+
+    public void CallMessageBox(string message)
+    {
+        MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
     }
 }

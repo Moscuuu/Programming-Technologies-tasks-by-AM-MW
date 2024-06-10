@@ -8,8 +8,6 @@ internal class UserDetailViewModel : IViewModel, IUserDetailViewModel
 
     private readonly IUserModelOperation _modelOperation;
 
-    private readonly IErrorInformer _informer;
-
     private int _id;
 
     public int Id
@@ -51,7 +49,6 @@ internal class UserDetailViewModel : IViewModel, IUserDetailViewModel
         this.UpdateUser = new OnClickCommand(e => this.Update(), c => this.CanUpdate());
 
         this._modelOperation = model ?? IUserModelOperation.CreateModelOperation();
-        this._informer = informer ?? new PopupErrorInformer();
     }
 
     public UserDetailViewModel(int id, string firstName, string lastName, IUserModelOperation? model = null, IErrorInformer? informer = null)
@@ -63,7 +60,6 @@ internal class UserDetailViewModel : IViewModel, IUserDetailViewModel
         this.UpdateUser = new OnClickCommand(e => this.Update(), c => this.CanUpdate());
 
         this._modelOperation = model ?? IUserModelOperation.CreateModelOperation();
-        this._informer = informer ?? new PopupErrorInformer();
     }
 
     private void Update()
@@ -72,7 +68,7 @@ internal class UserDetailViewModel : IViewModel, IUserDetailViewModel
         {
             this._modelOperation.UpdateUser(this.Id, this.FirstName, this.LastName);
 
-            this._informer.InformSuccess("User successfully updated!");
+            Informer.InformSuccess("User successfully updated!");
         });
     }
 

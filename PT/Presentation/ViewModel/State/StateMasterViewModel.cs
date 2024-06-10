@@ -121,8 +121,6 @@ internal class StateMasterViewModel : IViewModel, IStateMasterViewModel
         this.States = new ObservableCollection<IStateDetailViewModel>();
 
         this._modelOperation = IStateModelOperation.CreateModelOperation();
-        this._informer = informer ?? new PopupErrorInformer();
-
         this.IsStateSelected = false;
 
         Task.Run(this.LoadStates);
@@ -147,11 +145,11 @@ internal class StateMasterViewModel : IViewModel, IStateMasterViewModel
 
                 this.LoadStates();
 
-                this._informer.InformSuccess("State successfully created!");
+                Informer.InformSuccess("State successfully created!");
             }
             catch (Exception e)
             {
-                this._informer.InformError(e.Message);
+                Informer.InformError(e.Message);
             }
         });
     }
@@ -170,7 +168,7 @@ internal class StateMasterViewModel : IViewModel, IStateMasterViewModel
             }
             catch (Exception e)
             {
-                this._informer.InformError("Error while deleting state! Remember to remove all associated events!");
+                Informer.InformError("Error while deleting state! Remember to remove all associated events!");
             }
         });
     }

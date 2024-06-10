@@ -1,4 +1,4 @@
-﻿namespace Presentation.Model.API;
+﻿namespace Presentation.ViewModel;
 
 public interface IErrorInformer
 {
@@ -7,4 +7,5 @@ public interface IErrorInformer
     void InformSuccess(string message);
 
     string GetRecentMessage();
+    public void CallMessageBox(string message);
 }

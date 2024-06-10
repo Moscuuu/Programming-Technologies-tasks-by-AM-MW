@@ -121,8 +121,6 @@ internal class ProductMasterViewModel : IViewModel, IProductMasterViewModel
         this.Products = new ObservableCollection<IProductDetailViewModel>();
 
         this._modelOperation = model ?? IProductModelOperation.CreateModelOperation();
-        this._informer = informer ?? new PopupErrorInformer();
-
         this.IsProductSelected = false;
 
         Task.Run(this.LoadProducts);
@@ -148,7 +146,7 @@ internal class ProductMasterViewModel : IViewModel, IProductMasterViewModel
 
             this.LoadProducts();
 
-            this._informer.InformSuccess("Product added successfully!");
+            Informer.InformSuccess("Product added successfully!");
 
         });
     }
@@ -163,11 +161,11 @@ internal class ProductMasterViewModel : IViewModel, IProductMasterViewModel
 
                 this.LoadProducts();
 
-                this._informer.InformSuccess("Product deleted successfully!");
+                Informer.InformSuccess("Product deleted successfully!");
             }
             catch (Exception e)
             {
-                this._informer.InformError("Error while deleting product! Remember to remove all associated states!");
+                Informer.InformError("Error while deleting product! Remember to remove all associated states!");
             }
         });
     }
